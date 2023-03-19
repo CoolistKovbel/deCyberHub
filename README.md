@@ -1,5 +1,7 @@
 # deCyberHub
 
+Current Testing smart contract address: 0xC6BD61300AE27bD81991b4Ab75B28B3C9fdfDee2
+
 ## Technology Stack & Tools
 
 - Solidity (Writing Smart Contracts & Tests)
