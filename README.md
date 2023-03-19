@@ -2,6 +2,9 @@
 
 Current Testing smart contract address: 0xC6BD61300AE27bD81991b4Ab75B28B3C9fdfDee2
 
+This will be a small community nft projects. Where Basically you will be able to trade your NFT for another. OR sell it on the market. 
+Eventually implement that bitcoin nft and maybe put on nervos network. to make it avaible for all blockchains. HMMMMMMMM
+
 ## Technology Stack & Tools
 
 - Solidity (Writing Smart Contracts & Tests)
@@ -23,6 +26,4 @@ Current Testing smart contract address: 0xC6BD61300AE27bD81991b4Ab75B28B3C9fdfDe
 ### 3. Run tests
 `$ npx hardhat test`
 
-This will be a small community nft projects. Where Basically you will be able to trade your NFT for another. OR sell it on the market. 
 
-Eventually implement that bitcoin nft and maybe put on nervos network. to make it avaible for all blockchains. HMMMMMMMM
