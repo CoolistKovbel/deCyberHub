@@ -1,4 +1,9 @@
-# Dappcord
+# deCyberHub
+
+Current Testing smart contract address: 0xC6BD61300AE27bD81991b4Ab75B28B3C9fdfDee2
+
+This will be a small community nft projects. Where Basically you will be able to trade your NFT for another. OR sell it on the market. 
+Eventually implement that bitcoin nft and maybe put on nervos network. to make it avaible for all blockchains. HMMMMMMMM
 
 ## Technology Stack & Tools
 
@@ -21,16 +26,5 @@
 ### 3. Run tests
 `$ npx hardhat test`
 
-### 4. Start Hardhat node
-`$ npx hardhat node`
 
-### 5. Run deployment script
-In a separate terminal execute:
-`$ npx hardhat run ./scripts/deploy.js --network localhost`
-
-### 6. Start Socket.io server
-`$ node server.js`
-
-### 7. Start frontend
-In a separate terminal execute:
-`$ npm run start`
+Want to also do a nice little credit section. There are a lot a lot a lot of people that i would like to say helped me out and continue to help me out and pursue coding and make it fun and easy. Just need you guys to create a better community right now. if you are down... let me know #deBlockchainDev
