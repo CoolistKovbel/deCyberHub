@@ -1,5 +1,3 @@
-
-
 async function main() {
   // Test Accounts ; use accounts.account or accounts.address to get address i forget
   const [accounts, accounts2, accounts3, accounts4, accounts5] = await ethers.getSigners();
@@ -26,6 +24,7 @@ async function main() {
   console.log(deChatContract.address)
   // console.log(gamePetContact.address)
   // console.log(deTokenContract.address)
+
 
 
 
