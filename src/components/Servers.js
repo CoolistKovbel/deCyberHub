@@ -6,7 +6,10 @@ const Servers = () => {
   return (
     <div className="servers">
       <div className="server">
-        <img src={ethereum} alt="Ethereum Logo" />
+        <img src={ethereum} alt="ETH Logo" />
+      </div>
+      <div className="server">
+        <img src={ethereum} alt="CKB Logo" />
       </div>
       <div className="server">
         <img src={plus} alt="Add Server" />

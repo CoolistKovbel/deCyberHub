@@ -21,10 +21,12 @@ Eventually implement that bitcoin nft and maybe put on nervos network. to make i
 ### 1. Clone/Download the Repository
 
 ### 2. Install Dependencies:
+**be sure to use node -v 14.17.3**
 `$ npm install`
 
-### 3. Run tests
-`$ npx hardhat test`
+### 3. Install Dependencies:
+
+
 
 
 Want to also do a nice little credit section. There are a lot a lot a lot of people that i would like to say helped me out and continue to help me out and pursue coding and make it fun and easy. Just need you guys to create a better community right now. if you are down... let me know #deBlockchainDev

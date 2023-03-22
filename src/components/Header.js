@@ -9,11 +9,12 @@ const Navigation = ({ account, setAccount }) => {
 
   return (
     <nav>
-      <div className='nav__brand'>
-        <h1>deCyberHub</h1>
-      </div>
+      <header className="App-header">
+        <h1>deHub</h1>
+        <p>A place to be to spill your thoughts onto the blockchain</p>
+      </header>
 
-      {account ? (
+      {/* {account ? (
         <button
           type="button"
           className='nav__connect'
@@ -28,7 +29,7 @@ const Navigation = ({ account, setAccount }) => {
         >
           Connect
         </button>
-      )}
+      )} */}
 
 
     </nav>
