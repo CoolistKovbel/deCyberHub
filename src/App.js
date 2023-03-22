@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import EnterHub from "./EnterHub";
 
 // ABIs
-import contractAbi from "./abis/Dappcord.json";
+import contractAbi from "./abis/deHub.json";
 
 
 // Contract Address here

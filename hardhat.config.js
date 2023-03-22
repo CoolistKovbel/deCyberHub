@@ -19,7 +19,7 @@ module.exports = {
   solidity: "0.8.17",
   networks: {
     goerli: {
-        url: process.env.APIKEY,
+        url: process.env.INFURA_API_KEY,
         accounts: [process.env.PRIVATEKEY]
     }
   }
