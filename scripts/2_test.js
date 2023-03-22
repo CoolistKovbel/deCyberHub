@@ -6,8 +6,9 @@ async function main() {
   await deHubContract.deployed()
 
   // These are our i guess important address
-  console.log(deHubContract.address)
-  console.log(owner.address)
+  console.log('smartContract', deHubContract.address)
+  console.log('owner address',owner.address)
+  console.log('co owner?', randomperson.address)
 
   // --- We start calling and testing smart contract functions ---
   await deHubContract.getTotalAccounts()
@@ -19,15 +20,17 @@ async function main() {
 
   await accountv1.wait()
 
-  
+  const accountv2 = await deHubContract.connect(randomperson).createAccount(
+    'stacysmom',
+    'haditgoingon@thefountains.com'
+  )
+
+  await accountv2.wait()
+
   await deHubContract.getTotalAccounts()
-
-
 }
 
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-
-
