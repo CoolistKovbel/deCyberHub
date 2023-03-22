@@ -7,7 +7,9 @@ contract DeChat {
 
   uint256 public posts;
 
-  constructor() {}
+  constructor() public {
+    console.log('Hello world');
+  }
 
 
 }

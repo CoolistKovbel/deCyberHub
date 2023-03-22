@@ -4,7 +4,10 @@ describe("What Is life. Just A few features that is being currently worked on as
   
 
 
-it("Should check account")
+it("Should check account", async function(){
+  const [owner, recipient] = await ethers.getSigners();
+  console.log(owner, recipient);
+})
 
 
 
