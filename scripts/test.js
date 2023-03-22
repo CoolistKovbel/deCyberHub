@@ -15,7 +15,7 @@ async function main() {
   const deChatContract = await deChatFactory.deploy()
   const gamePetContact = await GamePetFactory.deploy()
 
-
+  // waiting for transaction to be completed basically
   await deHubContract.deployed()
   await deTokenContract.deployed()
   await deChatContract.deployed()

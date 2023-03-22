@@ -1,11 +1,11 @@
 const { expect } = require("chai");
 
-describe("deployment", function() {
-  let deployer, user;
-  beforeEach(async () => {
-    // Get signers
-    [deployer, user] = await ethers.getSigners();
-    // Deploy Smart Contract before each test
-    const Dappcord = await ethers.getContractFactory("Dappcord");
+describe("What Is life. Just A few features that is being currently worked on as well as a few way of doing things. There will be steps. And tests.", function() {
+  
+
+
+it("Should check account")
+
+
 
 })
