@@ -12,6 +12,7 @@ contract deHub {
     struct User {
         uint id;
         string name;
+        string email;
         address account;
     }
     
@@ -21,9 +22,9 @@ contract deHub {
     constructor(){}  
 
     // Create Accounts
-    function createAccount(string memory _name) public {
+    function createAccount(string memory _name, string memory _email) public {
         totalAccounts++;
-        users.push(User(totalAccounts, _name, msg.sender));
+        users.push(User(totalAccounts, _name, _email, msg.sender));
     }
 
     // Get total Amount

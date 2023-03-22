@@ -1,17 +1,15 @@
 import { ethers } from 'ethers'
 
-const Navigation = ({ account, setAccount }) => {
-  const connectHandler = async () => {
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    const account = ethers.utils.getAddress(accounts[0])
-    setAccount(account)
-  }
+const Navigation = ({ account, setAccount, connectWallet }) => {
+
+  
 
   return (
     <nav>
       <header className="App-header">
         <h1>deHub</h1>
         <p>A place to be to spill your thoughts onto the blockchain</p>
+        <button>Connect Now</button>
       </header>
 
       {/* {account ? (

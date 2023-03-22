@@ -1,48 +1,112 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import { io } from "socket.io-client";
 
 // Components
 import Header from "./components/Header";
-import Servers from "./components/Servers";
-import Channels from "./components/Channels";
-import Messages from "./components/Messages";
+import EnterHub from "./EnterHub";
 
 // ABIs
-import Dappcord from "./abis/Dappcord.json";
+import contractAbi from "./abis/Dappcord.json";
 
-// Config
-import config from "./config.json";
 
-// Socket
-const socket = io("ws://localhost:3030");
+// Contract Address here
+const contractAddress = ''
+
 
 function App() {
 
+  const [currentAccount, setCurrentAccount] = useState([])
 
-  function createAccount() {
+
+  // We are first going to grab the proivders and signers
+  const getEthereum = () => {
+    const {ethereum} = window
+    const provider = new ethers.providers.Web3Provider(ethereum)
+    const signer = provider.getSigner()
+    const deHubContract = new ethers.Contract(contractAddress, contractAbi, signer)
+    return deHubContract
+  }
+
+  // Check to see if our metamask is connected to our website
+  const checkIfWalletIsConnected = async () => {
+    
+    try {
+      
+      const {ethereum} = window;
+
+      if(!ethereum) {
+        alert("Must have metamask installed...");
+        return;
+      } else{
+        console.log("We have a ethereum object");
+      }
+
+
+      // Check to see if we have authorization to users wallet...
+      const accounts = await ethereum.request({ method: "eth_accounts" });
+
+      if(accounts.length > 0) {
+        const account = accounts[0]
+        console.log('There is an account: ', account)
+        setCurrentAccount(account)
+      } else{
+        console.log('You failed bro')
+      }
+
+      // Access smart contract and set the total number of blockchain users in deCyberHub smart contract
+
+
+    } catch (error) {
+      console.log(error)
+    }
 
   }
 
+  // Creating a method for users to connect to smart contract if not already connected
+  const connectWallet = async () => {
+    try{
+      const {ethereum} = window
+      
+      if(!ethereum){
+        alert('Y U NO HAVE METAMASK ')
+        return
+      }
+
+      // connect Accounts
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+      const account = ethers.utils.getAddress(accounts[0])
+      setCurrentAccount(account)
+
+      // Going to need to setup to grab all the accounts again.. maybe
+
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+  function createAccount() {
+    console.log('clicked')
+  }
+
+  useEffect(() => {
+    checkIfWalletIsConnected()
+  }, [])
 
   return (
     <div className="App">
-      <Header />
-      <section>
-        <h2>De Hub</h2>
-        <p>Create an account</p>
-        <form>
-          <label htmlFor="userName">
-            <input type="text" name="userName" placeholder="Enter User Name"/>
-          </label>
-          <label htmlFor="password">
-            <input type="password" name="password" placeholder="Enter Password"/>
-          </label>
-          <button onClick={createAccount}>Connect Account</button>
-        </form>
-      </section>
+      <Header account={currentAccount} setAccount={setCurrentAccount} connectWallet={connectWallet} />
+      <EnterHub createAccount={createAccount} />
     </div>
   );
 }
 
 export default App;
+
+
+// import { io } from "socket.io-client";
+
+// Config
+// import config from "./config.json";
+
+// Socket
+// const socket = io("ws://localhost:3030");
