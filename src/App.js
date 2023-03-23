@@ -72,11 +72,6 @@ function App() {
         return
       }
 
-      // connect Accounts
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-      const account = ethers.utils.getAddress(accounts[0])
-      setCurrentAccount(account)
-
       // Going to need to setup to grab all the accounts again.. maybe
 
     }catch(error){
@@ -84,8 +79,10 @@ function App() {
     }
   }
 
-  function createAccount() {
-    console.log('clicked')
+  function createAccount(e) {
+    e.preventDefault()
+    console.log('clicked', e.target.elements[0].value)
+    console.log('clicked', e.target.elements[1].value)
   }
 
   useEffect(() => {
@@ -94,8 +91,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header account={currentAccount} setAccount={setCurrentAccount} connectWallet={connectWallet} />
-      <EnterHub createAccount={createAccount} />
+      <Header 
+        account={currentAccount} 
+        setAccount={setCurrentAccount} 
+        connectWallet={connectWallet} />
+      <EnterHub 
+        createAccount={createAccount} />  
     </div>
   );
 }

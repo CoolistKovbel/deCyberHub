@@ -12,3 +12,70 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+button {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-family: monospace;
+  color: orangered;
+  margin: 5px 0;
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid orange;
+  background-color: #282c34;
+  
+}
+
+button:hover {
+  color: green;
+  border-color: green;
+}
+
+.App-header p {
+  margin: 5px;
+}
+
+#createAccountOnHub{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createAccountOnHub-container{
+  display: flex;
+  max-width: 1100px;
+  height: 900px;
+  border: 3px solid black;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.right-section {
+  width: 300px;
+}
+.right-section h2{
+  margin-top: 5px;
+  padding: 2px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.right-section form{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.right-section form input{
+  padding: 10px;
+  background-color: #282c34;
+  color: aliceblue;
+  outline: none;
+  border: 1px solid aliceblue;
+  margin-bottom: 10px;
+}
