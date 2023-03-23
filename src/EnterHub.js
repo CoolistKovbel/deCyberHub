@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EnterHub({createAccount}) {
+function EnterHub({createAccount, currentAmountOfAccounts}) {
   return (
     <section id="createAccountOnHub">
       {/* This is wrapping around the inner 2 sections and centering it right now */}
@@ -10,6 +10,7 @@ function EnterHub({createAccount}) {
           <h2>deCyberWindow</h2>
           <p>Create an account</p>
           <p>You are basically briging your account onto the blockchain.. itll just wait till see what you can do</p>
+          <p>There is currently about {currentAmountOfAccounts} accounts</p>
         </div>
         {/* basically the login section */}
         <div className='right-section'>

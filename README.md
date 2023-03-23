@@ -1,6 +1,6 @@
 # deCyberHub
 
-Current Testing smart contract address: 0xC6BD61300AE27bD81991b4Ab75B28B3C9fdfDee2
+Current Testing Site URL: https://de-cyber-hub.vercel.app/
 
 This will be a small community nft projects. Where Basically you will be able to trade your NFT for another. OR sell it on the market. 
 Eventually implement that bitcoin nft and maybe put on nervos network. to make it avaible for all blockchains. HMMMMMMMM
@@ -26,7 +26,7 @@ Eventually implement that bitcoin nft and maybe put on nervos network. to make i
 
 ### 3. 
 
-SHIB ETH Contract:0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
+SHIB ETH Contract: 0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce
 
 
 Want to also do a nice little credit section. There are a lot a lot a lot of people that i would like to say helped me out and continue to help me out and pursue coding and make it fun and easy. Just need you guys to create a better community right now. if you are down... let me know #deBlockchainDev

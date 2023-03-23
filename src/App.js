@@ -10,12 +10,13 @@ import contractAbi from "./abis/deHub.json";
 
 
 // Contract Address here
-const contractAddress = ''
+const contractAddress = '0xb55aafcC47057C62a717D1b5d709d3a21884227C'
 
 
 function App() {
 
   const [currentAccount, setCurrentAccount] = useState([])
+  const [currentAmountOfAccount, setCurrentAmountOfAccount] = useState("")
 
 
   // We are first going to grab the proivders and signers
@@ -29,7 +30,6 @@ function App() {
 
   // Check to see if our metamask is connected to our website
   const checkIfWalletIsConnected = async () => {
-    
     try {
       
       const {ethereum} = window;
@@ -54,7 +54,9 @@ function App() {
       }
 
       // Access smart contract and set the total number of blockchain users in deCyberHub smart contract
-
+      const deHubContract = getEthereum()
+      let count = await deHubContract.getTotalAccounts()
+      setCurrentAmountOfAccount(count.toNumber())
 
     } catch (error) {
       console.log(error)
@@ -79,10 +81,33 @@ function App() {
     }
   }
 
-  function createAccount(e) {
+  const createAccount = async (e) => {
     e.preventDefault()
-    console.log('clicked', e.target.elements[0].value)
-    console.log('clicked', e.target.elements[1].value)
+
+    try {
+
+      // We are calling the smart contract and putting it into a variable
+      const deHubContract = getEthereum();
+      // We run the create account function from smart contract
+      let deAccount = await deHubContract.createAccount(e.target.elements[0].value, e.target.elements[1].value)
+      // We look for transaction hash
+      console.log('mining trx', deAccount.hash)
+      // We wait till the transaction is finished
+      await deAccount.wait()
+
+      let count = await deHubContract.getTotalAccounts()
+      setCurrentAmountOfAccount(count.toNumber())
+
+      // We reset the values
+      e.target.elements[0].value = ""
+      e.target.elements[1].value = ""
+
+
+    } catch (error) {
+      console.log(error)
+    }
+
+
   }
 
   useEffect(() => {
@@ -96,7 +121,9 @@ function App() {
         setAccount={setCurrentAccount} 
         connectWallet={connectWallet} />
       <EnterHub 
-        createAccount={createAccount} />  
+        createAccount={createAccount} 
+        currentAmountOfAccounts={currentAmountOfAccount}
+        />  
     </div>
   );
 }
