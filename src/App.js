@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { Routes, Route } from "react-router-dom";
+import MetaMaskSDK from "@metamask/sdk";
 
 // Components
 import Account from "./components/Account";
@@ -17,13 +18,28 @@ import contractAbi from "./abis/deHub.json";
 // Contract Address here
 const contractAddress = "0xb55aafcC47057C62a717D1b5d709d3a21884227C";
 
+// Metamask options
+const options = {
+  injectProvider: true,
+  communicationLayerPreference: "webrtc",
+  getUniversalLink: "",
+  transports: ["websocket", "polling"],
+  checkInstallationImmediately: true,
+};
+
+// Itilize metamask
+const MMSDK = new MetaMaskSDK(options);
+
+// Create our own ethereum variable with metamask
+const ethereum = MMSDK.getProvider(); // Another version of window.ethereum
+
 function App() {
+  console.log(ethereum._state);
   const [currentAccount, setCurrentAccount] = useState([]);
   const [currentAmountOfAccount, setCurrentAmountOfAccount] = useState("");
 
   // We are first going to grab the proivders and signers
   const getEthereum = () => {
-    const { ethereum } = window;
     const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
     const deHubContract = new ethers.Contract(
@@ -37,7 +53,7 @@ function App() {
   // Check to see if our metamask is connected to our website
   const checkIfWalletIsConnected = async () => {
     try {
-      const { ethereum } = window;
+      // const { ethereum } = window;
 
       if (!ethereum) {
         alert("Must have metamask installed...");
@@ -47,7 +63,11 @@ function App() {
       }
 
       // Check to see if we have authorization to users wallet...
-      const accounts = await ethereum.request({ method: "eth_accounts" });
+      // const accounts = await ethereum.request({ method: "eth_accounts" });
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      console.log(accounts[0]);
 
       if (accounts.length > 0) {
         const account = accounts[0];
