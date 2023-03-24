@@ -31,3 +31,5 @@ DOGE address not contract: D6Por3nraZ6jzcU5K4xYTmXQbkMn84nKFB
 Maybe Need to contact:
 0x680d3113caf77b61b510f332d5ef4cf5b41a761d (bnb)
 
+
+## PS the typescript and react-scripts are different versions installed --legacy-peer-deps
