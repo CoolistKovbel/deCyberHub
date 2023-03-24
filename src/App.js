@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
+import { Routes, Route } from "react-router-dom";
 
 // Components
-import Header from "./components/Header";
-import EnterHub from "./EnterHub";
+import Account from "./components/Account";
+import Home from "./Home";
+import Layout from "./Layout";
+import Channels from "./components/Channels";
+import Group from "./components/Group";
+import DeFi from "./components/DeFi";
+import UniversalSufferage from "./components/UniversalSufferage";
 
 // ABIs
 import contractAbi from "./abis/deHub.json";
@@ -109,15 +115,30 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        account={currentAccount}
-        setAccount={setCurrentAccount}
-        connectWallet={connectWallet}
-      />
-      <EnterHub
-        createAccount={createAccount}
-        currentAmountOfAccounts={currentAmountOfAccount}
-      />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <Home
+                currentAccount={currentAccount}
+                setCurrentAccount={setCurrentAccount}
+                connectWallet={connectWallet}
+                createAccount={createAccount}
+                currentAmountOfAccounts={currentAmountOfAccount}
+              />
+            }
+          />
+          <Route
+            path="account"
+            element={<Account account={currentAccount} />}
+          />
+          <Route path="channels" element={<Channels />} />
+          <Route path="groups" element={<Group />} />
+          <Route path="defi" element={<DeFi />} />
+          <Route path="universal-sufferage" element={<UniversalSufferage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

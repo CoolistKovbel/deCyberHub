@@ -1,6 +1,9 @@
 import React from 'react'
 
+
 function EnterHub({createAccount, currentAmountOfAccounts}) {
+
+
   return (
     <section id="createAccountOnHub">
       {/* This is wrapping around the inner 2 sections and centering it right now */}

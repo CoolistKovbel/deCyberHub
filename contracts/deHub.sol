@@ -36,4 +36,3 @@ contract deHub {
 
 }
 
-// Im dead so many projects. So much time wasted doing things I know I am too good for. NOT putting enough work into things that matter. But at this point I am saying f*ck it. if a 12 year old can make 250k or even more from a nft project. I am going to make sure I make something similar but this project and the community that is going to help build it going to be worth more than that 12 year old or even that 250k. If you are watching this kid.. I envy you and youre talents you make me wish I was in your shoes. I know you will do better than great in life. Your project is also cool but mine will be cooler. 
